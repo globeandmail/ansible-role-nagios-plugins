@@ -204,7 +204,7 @@ galaxy_info:
   #  - all
   #  - Any
 
-  galaxy_tags: []
+  galaxy_tags:
     - nagios
     - monitoring
     # List tags for your role here, one per line. A tag is a keyword that describes
