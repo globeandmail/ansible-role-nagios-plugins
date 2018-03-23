@@ -1,0 +1,20 @@
+---
+- name: Ubuntu-14 | create custom plugins directory
+  file:
+    path={{ nagios_plugins_custom_dir_dest }}
+    state=directory
+    mode=0755
+    owner=root
+    group=root
+  when: nagios_plugins_custom_dir_dest is defined
+
+
+- name: Ubuntu-14 | synchronize custome plugins to remote
+  synchronize:
+   src={{ nagios_plugins_custom_dir_src }}
+   dest={{ nagios_plugins_custom_dir_dest }}
+   recursive=yes
+   delete=no
+   owner=yes
+   group=yes
+  when: nagios_plugins_custom_dir_dest is defined and nagios_plugins_custom_dir_src is defined
