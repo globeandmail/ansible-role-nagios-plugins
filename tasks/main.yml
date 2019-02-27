@@ -7,4 +7,3 @@
 
 - name: include distro specific tasks
   include_tasks: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
-  when: ( something or something_else ) is defined
