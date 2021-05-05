@@ -1,5 +1,5 @@
 ---
-- name: Ubuntu-18 | create custom plugins directory
+- name: Ubuntu | create custom plugins directory
   file:
     path={{ nagios_plugins_custom_dir_dest }}
     state=directory
@@ -9,7 +9,7 @@
   when: nagios_plugins_custom_dir_dest is defined
 
 
-- name: Ubuntu-18 | synchronize custome plugins to remote
+- name: Ubuntu | synchronize custome plugins to remote
   synchronize:
    src={{ nagios_plugins_custom_dir_src }}
    dest={{ nagios_plugins_custom_dir_dest }}
